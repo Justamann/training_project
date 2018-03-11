@@ -1,10 +1,41 @@
 # Эти задачи необходимо решить используя регулярные выражения!
 
 # Задача - 1
-# Запросите у пользователя имя, фамилию, email. Теперь необходимо совершить проверки, имя и фамилия должны иметь заглавные первые буквы.
-# email - не должен иметь заглавных букв и должен быть в формате: текст в нижнем регистре, допускается нижнее подчеркивание и цифры, потом @, потом текст, допускаются цифры, точка, ru или org или com.
+# Запросите у пользователя имя, фамилию, email. Теперь необходимо совершить проверки,
+# имя и фамилия должны иметь заглавные первые буквы.
+# email - не должен иметь заглавных букв и должен быть в формате: текст в нижнем регистре,
+# допускается нижнее подчеркивание и цифры, потом @, потом текст, допускаются цифры, точка, ru или org или com.
 # Например:
-# Пупкин василий - неверно указано имя, te$T@test.net - неверно указан email (спецсимвол, заглавная буква, .net), te_4_st@test.com - верно указан.
+# Пупкин василий - неверно указано имя, te$T@test.net - неверно указан email (спецсимвол,
+# заглавная буква, .net), te_4_st@test.com - верно указан.
+import re
+
+# name = input('Enter your Name:')
+# surname = input('Enter your Surname:')
+# email = input('Enter your e-mail:')
+#
+# patern = '^[A-Z][a-z]+$'
+#
+# with open('email_file.txt', 'w+', encoding='UTF-8') as f:
+#     if re.search(patern, name):
+#         f.write('{}{}{} \n'.format('Name', '- ', name))
+#     else:
+#         print('Enter Name is not correct ')
+#
+#     if re.search(patern, surname):
+#         f.write('{}{}{} \n'.format('Surname', '- ', surname))
+#     else:
+#         print('Enter Surname is not correct ')
+#     if re.search('^[a-z+0-9+\.+_+-]+@[a-z]+\.com|ru|org$', email):
+#         f.write('{}{}{} \n'.format('email', '- ', email))
+#     else:
+#         print('Enter email is not correct')
+#
+# with open('email_file.txt', 'r', encoding='UTF-8') as f:
+#     for i in f:
+#         print(i)
+
+
 
 # Задача - 2:
 # Вам дан текст:
@@ -43,3 +74,11 @@ some_str = '''
 
 # Необходимо с помощью регулярных выражений определить есть ли в тексте подряд
 # более одной точки, при любом исходе сообщите результат пользователю!
+patern = '(\.){3}'
+
+if re.search(patern, some_str):
+    print('Yes')
+else:
+    print('No')
+
+

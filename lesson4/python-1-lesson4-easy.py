@@ -6,15 +6,11 @@ import random
 # Дан список, заполненный произвольными целыми числами.
 # Получить новый список, элементы которого будут
 # квадратами элементов исходного списка
-[1, 2, 4, 0] --> [1, 4, 16, 0]
+# [1, 2, 4, 0] --> [1, 4, 16, 0]
 
 lst1 = [random.randint(5, 25) for _ in range(10)]
+lst2 = [i**2 for i in lst1]
 
-print(lst1)
-
-lst2 = []
-for i in lst1:
-    lst2.append(i ** 2)
 print(lst2)
 
 
@@ -26,23 +22,9 @@ print(lst2)
 fruits_lst = ['яблоко', 'апельсин', 'ананас', 'груша', 'манго', 'грейпфрут']
 fruits_lst2 = ['манго', 'ананас', 'банан', 'киви', 'арбуз', 'яблоко']
 
-sum_lst = []
-for i in fruits_lst:
-    for b in fruits_lst2:
-        if b == i:
-            sum_lst.append(i)
+sum_lst = [i for i in fruits_lst if i in fruits_lst2]
 
-for i in sum_lst:
-    print(' - ', i)
-
-
-
-
-
-
-
-
-
+print(sum_lst)
 
 # Задание-3:
 # Дан список, заполненный произвольными числами.
@@ -52,9 +34,6 @@ for i in sum_lst:
 # + Элемент не кратен 4
 
 some_lst = [random.randint(-20, 50) for _ in range(20)]
-new_lst = []
-for i in some_lst:
-    if i >= 0 and i % 3 == 0 and i % 4 != 0:
-        new_lst.append(i)
-print(some_lst)
+new_lst = [i for i in some_lst if i >= 0 and i % 3 == 0 and i % 4 > 0]
+
 print(new_lst)
